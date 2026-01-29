@@ -13,7 +13,7 @@ abstract class Filter implements \Abbasudo\Purity\Contracts\Filter
     public function __construct(Builder $query, string $column, array $values)
     {
         $this->query = $query;
-        $this->column = $column;
+        $this->column = $query->qualifyColumn($column);
         $this->values = $values;
     }
 
